@@ -1,34 +1,34 @@
-# 7�Z�O�A�N�Z�T�� �\���f�[�^�ύX�pArduino�X�P�b�`
+# 7セグアクセサリ 表示データ変更用Arduinoスケッチ
 
-���̃��|�W�g����[7�Z�O�A�N�Z�T��](http://www.cyberchabudai.org/index.php/page/7segaccessory)�̕\���f�[�^�ύX�pArduino�X�P�b�`�ƁA�ύX���@�ɂ��ċL�ڂ��Ă��܂��B
+このリポジトリは[7セグアクセサリ](http://www.cyberchabudai.org/index.php/page/7segaccessory)の表示データ変更用Arduinoスケッチと、変更方法について記載しています。
 
-## 7�Z�O�A�N�Z�T���Ƃ�
-7�Z�O�����gLED�̌���A�N�Z�T���p�[�c�ł��B  
-���i�̑傫�������̂܂܂ɁA�}�C�R���ɂ��_��������������܂����BCR1025�d�r��4���Ԏg�p�\�ł��B
+## 7セグアクセサリとは
+7セグメントLEDの光るアクセサリパーツです。  
+部品の大きさをそのままに、マイコンによる点灯制御を実現しました。CR1025電池で4時間使用可能です。
 
-���݃y�[�W�F[http://www.cyberchabudai.org/7segaccessory](http://www.cyberchabudai.org/7segaccessory)  
-����F[https://youtu.be/uekWH8jEsWw](https://youtu.be/uekWH8jEsWw)
+特設ページ：[http://www.cyberchabudai.org/index.php/page/7segaccessory](http://www.cyberchabudai.org/index.php/page/7segaccessory)  
+動画：[https://youtu.be/uekWH8jEsWw](https://youtu.be/uekWH8jEsWw)
 
 
-## �_���p�^�[���ύX���@�ɂ���
-�_���p�^�[���̕ύX�ɂ��Ă͓d�q�H��̒m����������݂̂�ΏۂƂ��Ă��܂��B���̍�ƂŕύX�����͓̂_���p�^�[�������Ń}�C�R���̃t�@�[���E�F�A�͕ς��܂���B���̂��ߏ��������Ɏ��s���Ă��A��������܂ō�Ƃ��J��Ԃ����Ƃ��ł��܂��B
+## 点灯パターン変更方法について
+点灯パターンの変更については電子工作の知識がある方のみを対象としています。この作業で変更されるのは点灯パターンだけでマイコンのファームウェアは変わりません。そのため書き換えに失敗しても、成功するまで作業を繰り返すことができます。
 
-## �K�v�Ȃ���
-ArduinoUNO�A�u���b�h�{�[�h�AIC�N���b�v�Q�{�A��R3K���P�{�A��R2K���P�{�A�V�i��CR1025�d�r�P��
+## 必要なもの
+ArduinoUNO、ブレッドボード、ICクリップ２本、抵抗3KΩ１本、抵抗2KΩ１本、新品のCR1025電池１個
 
-## �ڑ����@
-���}�̒ʂ�ɐڑ����Ă��������B�Ȃ����������钼�O�܂ł́A7�Z�O�A�N�Z�T����GND�i���̃N���b�v�j�݂̂�ڑ����Ă��������B�d�r���܂��}�����Ȃ��ł��������B
+## 接続方法
+下図の通りに接続してください。なお書き換える直前までは、7セグアクセサリにGND（黒のクリップ）のみを接続してください。電池もまだ挿入しないでください。
 
-![�z���}](https://github.com/oks486/7segAccessory/blob/image/7seg_connect.png)
+![配線図](https://github.com/oks486/7segAccessory/blob/image/7seg_connect.png)
 
-## �\���f�[�^�ύX�菇
-1. Arduino�X�P�b�`�̎擾  
-�X�P�b�`���_�E�����[�h���AArduinoIDE�ŊJ���܂��B�X�P�b�`�̐����ɏ]���ē_���f�[�^���ύX���Ă��������B
-2. Arduino�X�P�b�`�̏�������  
-��L�̔z���}�̏�ԁiArduino��7�Z�O�u���b�N��GND�̂ݐڑ��j�ŁA��UArduino�ɃX�P�b�`���������݂܂��B
-3. �\���f�[�^�̏�������  
-�d�r���Z�b�g���āA�h�b�g�̃Z�O�����g���_�����Ă���ԁi��10�b�ԁj�ɁA�q���ł��Ȃ����������Е���IC�N���b�v��ڑ����AArduino�̃��Z�b�g�{�^���������Ă��������B�����������n�܂�܂��B
-�\���]�T������Ǝv���܂��̂ŁA�Q�Ă��ɗ��������čs���܂��傤�I�O�O  
-�h�b�g���_�����Ă���Ԃ͏����������A�����������I����3��h�b�g���_�ł��A�V�����f�[�^�ł̕\�����n�܂�܂��B
+## 表示データ変更手順
+1. Arduinoスケッチの取得  
+スケッチをダウンロードし、ArduinoIDEで開きます。スケッチの説明に従って点灯データ列を変更してください。
+2. Arduinoスケッチの書き込み  
+上記の配線図の状態（Arduinoと7セグアクセサリはGNDのみ接続）で、一旦Arduinoにスケッチを書き込みます。
+3. 表示データの書き換え  
+電池をセットして、ドットのセグメントが点灯している間（約10秒間）に、繋いでいなかったもう片方のICクリップを接続し、Arduinoのリセットボタンを押してください。書き換えが始まります。
+十分余裕があると思いますので、慌てずに落ち着いて行いましょう！
+ドットが点灯している間は書き換え中、書き換えが終わると3回ドットが点滅し、新しいデータでの表示が始まります。
 
-�Ӑ}�ʂ�ɏ����ς��Ȃ������ꍇ�́A�z���̊m�F�ƁA7�Z�O�A�N�Z�T���̋����������s�p�ӂɕʂ̋����ɐG��Ă��Ȃ������m�F���A�J��Ԃ�3�̎菇���s���Ă��������B
+意図通りに書き変わらなかった場合は、配線の確認と、7セグアクセサリの金属部分が不用意に別の金属に触れていないかを確認し、繰り返し3の手順を行ってください。
