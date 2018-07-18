@@ -80,11 +80,11 @@ void setup() {
 }
 
 void loop() {
-  for (int i = 0; i < sizeof(commandData); i++) {
+  for (unsigned int i = 0; i < sizeof(commandData); i++) {
     Serial.write(commandData[i]);
     delay(10);
   }
-  for (int i = 0; i < sizeof(dispData); i++) {
+  for (unsigned int i = 0; i < sizeof(dispData); i++) {
     Serial.write(dispData[i]);
     delay(10);
   }
